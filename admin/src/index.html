@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+ 
+ <link rel="icon" type="image/svg+xml" href="assets/images/hero.png" />
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
+<link rel="stylesheet" href="assets/libs/simple-datatables/style.css">
+
+ 
+
+</head>
+<body>
+
+  <app-root></app-root>
+
+  <!-- Fix: Check if element exists -->
+  <script>
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  </script>
+
+
+
+
+
+    <!-- Core Libraries -->
+  <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/lucide/umd/lucide.min.js"></script>
+  
+  <!-- Core Managers -->
+  <script src="assets/js/core/ThemeManager.js"></script>
+  <script src="assets/js/core/LayoutManager.js"></script>
+  <script src="assets/js/core/DirectionManager.js"></script>
+  <script src="assets/js/core/i18n.js"></script>
+  
+  <!-- Components -->
+  <script src="assets/js/components/world-clock.js"></script>  
+  <script src="assets/js/main.js"></script>
+
+  <!-- Components -->
+  <script src="assets/libs/simple-datatables/umd/simple-datatables.js"></script>
+  <script src="assets/js/components/datatables.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
