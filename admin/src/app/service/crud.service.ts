@@ -20,6 +20,10 @@ export class CrudService {
   constructor(private http : HttpClient) { }
 
 
+
+
+  /* َAdmin CRUD operations */
+
   loginAdmin(admin:Admin){
     return this.http.post<any>(this.loginurl, admin);
   }
@@ -41,7 +45,7 @@ addadmin(admin:Admin){
 
 
 
-
+  /* َCandidat CRUD operations */
 
 
 
@@ -56,7 +60,7 @@ addadmin(admin:Admin){
 
   
 
-
+  /* َOffer CRUD operations */
 
 
     getOffer(): Observable<Offer[]> {
@@ -71,7 +75,7 @@ addadmin(admin:Admin){
 
 
 
-
+  /* Contact CRUD operations */
 
    getContact(): Observable<Contact[]> {
     return this.http.get<Contact[]>(this.apiUrl + "/contact");

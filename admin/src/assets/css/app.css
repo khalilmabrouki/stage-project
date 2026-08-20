@@ -1,4 +1,21 @@
-﻿@import"../libs/tom-select/css/tom-select.bootstrap5.css";@import"../libs/flatpickr/flatpickr.min.css";@import"../libs/quill/quill.snow.css";@import"../libs/quill/quill.bubble.css";@import"../libs/filepond/filepond.min.css";@import"../libs/filepond-plugin-image-preview/filepond-plugin-image-preview.css";@import"../libs/animate.css/animate.css";@import"../libs/swiper/swiper-bundle.css";@import"../libs/driver.js/driver.css";@import"../libs/sweetalert2/sweetalert2.min.css";@import"../libs/leaflet/leaflet.css";@import"../libs/jsvectormap/jsvectormap.min.css";@import"../libs/%40fortawesome/fontawesome-free/css/all.min.css";@import"../libs/%40tabler/icons-webfont/tabler-icons.min.css";@import"../libs/weather-icons/css/weather-icons.min.css";@import"../libs/nouislider/nouislider.css";@import"../libs/tiny-slider/tiny-slider.css";::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:rgba(0,0,0,0)}::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,.2);border-radius:10px}::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,.3)}[data-bs-theme=dark] ::-webkit-scrollbar-thumb{background-color:hsla(0,0%,100%,.2)}[data-bs-theme=dark] ::-webkit-scrollbar-thumb:hover{background-color:hsla(0,0%,100%,.3)}.form-control{background-color:var(--bs-body-bg) !important}.form-select{background-color:var(--bs-body-bg) !important}.dropdown-menu{background-color:var(--bs-body-bg) !important}.table{background-color:var(--bs-body-bg) !important}/*!
+﻿@import"../libs/tom-select/css/tom-select.bootstrap5.css";
+
+@import"../libs/flatpickr/flatpickr.min.css";
+@import"../libs/quill/quill.snow.css";
+@import"../libs/quill/quill.bubble.css";
+@import"../libs/filepond/filepond.min.css";
+@import"../libs/filepond-plugin-image-preview/filepond-plugin-image-preview.css";
+@import"../libs/animate.css/animate.css";
+@import"../libs/swiper/swiper-bundle.css";
+@import"../libs/driver.js/driver.css";
+@import"../libs/sweetalert2/sweetalert2.min.css";
+@import"../libs/leaflet/leaflet.css";
+@import"../libs/jsvectormap/jsvectormap.min.css";
+@import"../libs/%40fortawesome/fontawesome-free/css/all.min.css";
+@import"../libs/%40tabler/icons-webfont/tabler-icons.min.css";
+@import"../libs/weather-icons/css/weather-icons.min.css";
+@import"../libs/nouislider/nouislider.css";
+@import"../libs/tiny-slider/tiny-slider.css";::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:rgba(0,0,0,0)}::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,.2);border-radius:10px}::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,.3)}[data-bs-theme=dark] ::-webkit-scrollbar-thumb{background-color:hsla(0,0%,100%,.2)}[data-bs-theme=dark] ::-webkit-scrollbar-thumb:hover{background-color:hsla(0,0%,100%,.3)}.form-control{background-color:var(--bs-body-bg) !important}.form-select{background-color:var(--bs-body-bg) !important}.dropdown-menu{background-color:var(--bs-body-bg) !important}.table{background-color:var(--bs-body-bg) !important}/*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
