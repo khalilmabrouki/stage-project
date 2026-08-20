@@ -98,7 +98,7 @@ adminForm: FormGroup;
     }
 
     const data = this.adminForm.value;
-    const admin = new Admin(undefined, data.nom, data.prenom, data.email, data.mp, data.role);
+    const admin = new Admin(undefined, data.nom, data.prenom, data.email, data.mdp, data.role);
 
     this.services.addadmin(admin).subscribe({
       next: (res) => {

@@ -9,15 +9,27 @@ import { Contact } from '../Entity/Contact.Entity';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CrudService {
+
+  
   apiUrl='http://localhost:8080/api';
+ loginurl='http://localhost:8080/api/admin/login';
+
 
   constructor(private http : HttpClient) { }
+
+
+  loginAdmin(admin:Admin){
+    return this.http.post<any>(this.loginurl, admin);
+  }
 
   
 addadmin(admin:Admin){
     return this.http.post<any>(this.apiUrl+"/admin", admin);
   }
+
+
 
   getAdmin(): Observable<Admin[] | { admins: Admin[] } | { data: Admin[] }>{
     return this.http.get<Admin[] | { admins: Admin[] } | { data: Admin[] }>(this.apiUrl +"/admin");
@@ -27,6 +39,12 @@ addadmin(admin:Admin){
     return this.http.delete(url )
   }
 
+
+
+
+
+
+
     getCandidat(): Observable<Candidat[]> {
     return this.http.get<Candidat[]>(this.apiUrl + "/candidat");
   }
@@ -35,6 +53,9 @@ addadmin(admin:Admin){
     const url = `${this.apiUrl}/candidat/${id}`;
     return this.http.delete(url);
   }
+
+  
+
 
 
 
@@ -46,6 +67,8 @@ addadmin(admin:Admin){
     const url = `${this.apiUrl}/offer/${id}`;
     return this.http.delete(url);
   }
+
+
 
 
 

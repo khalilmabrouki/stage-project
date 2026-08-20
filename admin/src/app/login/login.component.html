@@ -27,46 +27,44 @@
               <p class="text-muted">Welcome back! Please login to your account.</p>
             </div>
 
-            <form>
+            <form (ngSubmit)="login()" [formGroup]="loginForm" >
+
               <div class="mb-3">
                 <label class="form-label fw-medium">Email Address</label>
                 <div class="input-group">
                   <span class="input-group-text">
                     <i data-lucide="mail" class="fs-18"></i></span>
-                  <input type="email" class="form-control" placeholder="admin@example.com" value="admin@example.com">
+                  <input formControlName="email" type="email" class="form-control" value="">
                 </div>
               </div>
+
 
               <div class="mb-4">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <label class="form-label fw-medium mb-0">Password</label>
-                  <a class='text-decoration-none small' href='forgot-password.html'>Forgot password?</a>
                 </div>
                 <div class="input-group">
                   <span class="input-group-text">
                     <i data-lucide="lock" class="fs-18"></i></span>
-                  <input type="password" class="form-control" placeholder="••••••••" value="password">
+                  <input formControlName="mdp" type="password" class="form-control" value="">
                 </div>
               </div>
 
-              <div class="mb-4 form-check">
-                <input type="checkbox" class="form-check-input" id="rememberMe" checked>
-                <label class="form-check-label" for="rememberMe">Remember me</label>
-              </div>
+           
 
               <div class="d-grid mb-4">
-                <button type="button" class="btn btn-primary fw-bold" onclick="window.location.href='index.html'">Sign
+                <button type="submit" class="btn btn-primary fw-bold" >Sign
                   In</button>
               </div>
 
               <div class="text-center">
-                <p class="text-muted mb-0">Don't have an account? <a class='text-decoration-none fw-medium' href='register.html'>Create one</a></p>
+                <p class="text-muted mb-0">Don't have an account? <a class='text-decoration-none fw-medium' href=''>Create one</a></p>
               </div>
             </form>
           </div>
         </div>
         <div class="text-center mt-4">
-          <p class="text-muted small">&copy; <span id="year"></span> DashLite. All rights reserved.</p>
+          <p class="text-muted small">&copy;  DashLite. All rights reserved.</p>
         </div>
       </div>
     </div>
