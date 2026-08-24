@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterjeunediplomeComponent } from './registerjeunediplome/registerjeunediplome.component';
+import { RegisterresponsableentrepriseComponent } from './registerresponsableentreprise/registerresponsableentreprise.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     RegisterComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    RegisterjeunediplomeComponent,
+    RegisterresponsableentrepriseComponent
   ],
   imports: [
     BrowserModule,

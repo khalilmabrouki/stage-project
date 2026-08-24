@@ -6,6 +6,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisterjeunediplomeComponent } from './registerjeunediplome/registerjeunediplome.component';
+import { RegisterresponsableentrepriseComponent } from './registerresponsableentreprise/registerresponsableentreprise.component';
 
 const routes: Routes = [
 
@@ -14,6 +16,9 @@ const routes: Routes = [
  {path: 'contact',component :ContactComponent},
  {path :'', component:LoginComponent},
  {path:'register',component:RegisterComponent},
+ {path :'registerjeunediplome',component:RegisterjeunediplomeComponent},
+ {path :'registerresponsableentreprise',component:RegisterresponsableentrepriseComponent}
+
 
 ];
 
