@@ -18,5 +18,9 @@ public interface ResponsableEntrepriseService {
 
     Optional<ResponsableEntreprise> afficherResponsableEntrepriseById(Long id);
 
+
+
+    // ✅ AJOUTER CETTE MÉTHODE
+    boolean existsByEmail(String email);
 }
 

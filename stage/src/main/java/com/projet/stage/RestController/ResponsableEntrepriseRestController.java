@@ -3,9 +3,13 @@ package com.projet.stage.RestController;
 import com.projet.stage.Entity.ResponsableEntreprise;
 import com.projet.stage.Service.ResponsableEntrepriseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 @RestController
 @RequestMapping(value = "/responsableentreprise")
@@ -14,6 +18,32 @@ public class ResponsableEntrepriseRestController {
 
     @Autowired
     ResponsableEntrepriseService responsableEntrepriseService;
+
+
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody ResponsableEntreprise responsable) {
+        Map<String, Object> response = new HashMap<>();
+
+        System.out.println("🔵 Inscription responsable: " + responsable.getEmail());
+
+        // Vérifier si l'email existe déjà
+        if (responsableEntrepriseService.existsByEmail(responsable.getEmail())) {
+            response.put("success", false);
+            response.put("message", "Cet email est déjà utilisé");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
+        }
+
+        responsable.setStatut("Actif");
+        ResponsableEntreprise saved = responsableEntrepriseService.ajouterResponsableEntreprise(responsable);
+
+        response.put("success", true);
+        response.put("message", "Inscription réussie");
+        response.put("id", saved.getId());
+        response.put("email", saved.getEmail());
+
+        return ResponseEntity.ok(response);
+    }
+
 
     // Ajouter un responsable d'entreprise
     @RequestMapping(method = RequestMethod.POST)

@@ -1,1 +1,180 @@
-<p>registerjeunediplome works!</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Inscription | Jeune Diplômé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" " />
+    <meta name="keywords" content="" />
+    <meta content="Themesdesign" name="author" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div>
+        <div class="main-content">
+            <div class="page-content">
+
+                <!-- START SIGN-UP -->
+                <section class="bg-auth">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-10 col-lg-12">
+                                <div class="card auth-box">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 text-center">
+                                            <div class="card-body p-4">
+                                                <a href="index.html">
+                                                    <img src="assets/images/logo-light.png" alt="" class="logo-light">
+                                                    <img src="assets/images/logo-dark.png" alt="" class="logo-dark">
+                                                </a>
+                                                <div class="mt-5">
+                                                    <img src="assets/images/auth/sign-up.png" alt="" class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+                                        <div class="col-lg-6">
+                                            <div class="auth-content card-body p-5 text-white">
+                                                <div class="w-100">
+                                                    <div class="text-center">
+                                                        <h5>Inscription Jeune Diplômé</h5>
+                                                        <p class="text-white-70">Créez votre compte pour trouver un stage</p>
+                                                    </div>
+
+                                                    <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-form">
+
+                                                        <!-- NOM -->
+                                                        <div class="mb-3">
+                                                            <label for="nomInput" class="form-label">Nom</label>
+                                                            <input type="text" 
+                                                                   class="form-control" 
+                                                                   id="nomInput"
+                                                                   formControlName="nom"
+                                                                   placeholder="Entrez votre nom">
+                                                        </div>
+
+                                                        <!-- PRÉNOM -->
+                                                        <div class="mb-3">
+                                                            <label for="prenomInput" class="form-label">Prénom</label>
+                                                            <input type="text" 
+                                                                   class="form-control" 
+                                                                   id="prenomInput"
+                                                                   formControlName="prenom"
+                                                                   placeholder="Entrez votre prénom">
+                                                        </div>
+
+                                                        <!-- EMAIL -->
+                                                        <div class="mb-3">
+                                                            <label for="emailInput" class="form-label">Email</label>
+                                                            <input type="email" 
+                                                                   class="form-control" 
+                                                                   id="emailInput"
+                                                                   formControlName="email"
+                                                                   placeholder="exemple@gmail.com">
+                                                        </div>
+
+                                                        <!-- TÉLÉPHONE -->
+                                                        <div class="mb-3">
+                                                            <label for="telephoneInput" class="form-label">Téléphone</label>
+                                                            <input type="tel" 
+                                                                   class="form-control" 
+                                                                   id="telephoneInput"
+                                                                   formControlName="telephone"
+                                                                   placeholder="12345678">
+                                                        </div>
+
+                                                        <!-- DIPLÔME -->
+                                                        <div class="mb-3">
+                                                            <label for="diplomeInput" class="form-label">Diplôme</label>
+                                                            <input type="text" 
+                                                                   class="form-control" 
+                                                                   id="diplomeInput"
+                                                                   formControlName="diplome"
+                                                                   placeholder="Ex: Master, Licence, Bac+3">
+                                                        </div>
+
+                                                        <!-- SPÉCIALITÉ -->
+                                                        <div class="mb-3">
+                                                            <label for="specialiteInput" class="form-label">Spécialité</label>
+                                                            <input type="text" 
+                                                                   class="form-control" 
+                                                                   id="specialiteInput"
+                                                                   formControlName="specialite"
+                                                                   placeholder="Ex: Informatique, Marketing, Finance">
+                                                        </div>
+
+                                                        <!-- ANNÉES D'EXPÉRIENCE -->
+                                                        <div class="mb-3">
+                                                            <label for="experienceInput" class="form-label">Années d'expérience</label>
+                                                            <input type="number" 
+                                                                   class="form-control" 
+                                                                   id="experienceInput"
+                                                                   formControlName="anneesExperience"
+                                                                   placeholder="0">
+                                                        </div>
+
+                                                        <!-- MOT DE PASSE -->
+                                                        <div class="mb-3">
+                                                            <label for="passwordInput" class="form-label">Mot de passe</label>
+                                                            <input type="password" 
+                                                                   class="form-control" 
+                                                                   id="passwordInput"
+                                                                   formControlName="mdp"
+                                                                   placeholder="Créez un mot de passe sécurisé">
+                                                        </div>
+
+                                                        <!-- CONFIRMER MOT DE PASSE -->
+                                                        <div class="mb-3">
+                                                            <label for="confirmPasswordInput" class="form-label">Confirmer le mot de passe</label>
+                                                            <input type="password" 
+                                                                   class="form-control" 
+                                                                   id="confirmPasswordInput"
+                                                                   formControlName="confirmMdp"
+                                                                   placeholder="Confirmez votre mot de passe">
+                                                        </div>
+
+                                                        <!-- TERMS -->
+                                                        <div class="mb-4">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    J'accepte les <a href="javascript:void(0)" class="text-white text-decoration-underline">Conditions générales</a>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- BOUTON -->
+                                                        <div class="text-center">
+                                                            <button type="submit" class="btn btn-white btn-hover w-100">
+                                                                S'inscrire
+                                                            </button>
+                                                        </div>
+                                                    </form>
+
+                                                    <div class="mt-3 text-center">
+                                                        <p class="mb-0">Vous avez déjà un compte ? 
+                                                            <a href="#" class="fw-medium text-white text-decoration-underline" (click)="goToLogin()"> Se connecter </a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end auth-box-->
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </section>
+                <!-- END SIGN-UP -->
+
+            </div>
+            <!-- End Page-content -->
+        </div>
+        <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+</body>
+
+</html>

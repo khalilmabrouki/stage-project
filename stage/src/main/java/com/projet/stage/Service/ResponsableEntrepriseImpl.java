@@ -10,8 +10,9 @@ import java.util.Optional;
 @Service
 
 public class ResponsableEntrepriseImpl implements ResponsableEntrepriseService {
-@Autowired
+    @Autowired
     ResponsableEntrepriseRepository responsableEntrepriseRepository;
+
     @Override
     public ResponsableEntreprise ajouterResponsableEntreprise(ResponsableEntreprise responsableEntreprise) {
         return responsableEntrepriseRepository.save(responsableEntreprise);
@@ -29,11 +30,18 @@ public class ResponsableEntrepriseImpl implements ResponsableEntrepriseService {
 
     @Override
     public void supprimerResponsableEntreprise(Long id) {
-responsableEntrepriseRepository.deleteById(id);
+        responsableEntrepriseRepository.deleteById(id);
     }
 
     @Override
     public Optional<ResponsableEntreprise> afficherResponsableEntrepriseById(Long id) {
         return responsableEntrepriseRepository.findById(id);
+    }
+
+
+    // ✅ AJOUTER CETTE MÉTHODE
+    @Override
+    public boolean existsByEmail(String email) {
+        return responsableEntrepriseRepository.existsByEmail(email);
     }
 }
