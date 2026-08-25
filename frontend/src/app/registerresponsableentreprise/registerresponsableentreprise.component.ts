@@ -81,7 +81,7 @@ export class RegisterresponsableentrepriseComponent {
   }
 
   goToLogin() {
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 
 

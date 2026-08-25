@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { JeuneDiplome } from '../Entity/JeuneDiplome.Entity';
 import { ResponsableEntreprise } from '../Entity/ResponsableEntreprise.Entity';
+import { Candidat } from '../Entity/Candidat.Entity';
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +52,10 @@ registerResponsableEntreprise(responsable: ResponsableEntreprise): Observable<an
 }
   
 
-  
+
+// ===== CANDIDAT =====
+registerCandidat(candidat: Candidat): Observable<any> {
+  console.log('🔵 Inscription candidat:', candidat);
+  return this.http.post(`${this.apiUrl}/candidat`, candidat);
+}
 }
