@@ -2,18 +2,16 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { Candidat } from '../Entity/Candidat.Entity';
+import { ResponsableEntreprise } from '../Entity/ResponsableEntreprise.Entity';
 import { CrudService } from '../service/crud.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-responsable-enterprise',
+  templateUrl: './login-responsable-enterprise.component.html',
+  styleUrls: ['./login-responsable-enterprise.component.css']
 })
-export class LoginComponent {
-
-  
-   loginForm: FormGroup;
+export class LoginResponsableEnterpriseComponent {
+ loginForm: FormGroup;
   loginAttempts = 0;
   isLocked = false;
   timeLeft = 25;
@@ -119,19 +117,32 @@ export class LoginComponent {
     }
 
     let data = this.loginForm.value;
-    let candidat = new Candidat(null, null, null, data.email, data.mdp, null, null);
+    let responsable = new ResponsableEntreprise(
+      null, 
+      null, 
+      null, 
+      data.email, 
+      data.mdp, 
+      null, 
+      null, 
+      null, 
+      null, 
+      null
+    );
 
-    this.service.loginCandidat(candidat).subscribe({
+    this.service.loginResponsableEntreprise(responsable).subscribe({
       next: (res) => {
         console.log('✅ Réponse du serveur:', res);
 
         if (res && res.token) {
           localStorage.setItem("myToken", res.token);
-          localStorage.setItem("role", "Candidat");
+          localStorage.setItem("role", "ResponsableEntreprise");
           localStorage.setItem("email", res.email || data.email);
           localStorage.setItem("nom", res.nom || '');
           localStorage.setItem("prenom", res.prenom || '');
           localStorage.setItem("id", res.id || '');
+          localStorage.setItem("nomEntreprise", res.nomEntreprise || '');
+          localStorage.setItem("poste", res.poste || '');
 
           Swal.fire({
             icon: 'success',
@@ -172,7 +183,7 @@ export class LoginComponent {
   }
 
   goToRegister() {
-    this.router.navigate(['register-candidat']);
+    this.router.navigate(['register-responsable-entreprise']);
   }
 
   ngOnDestroy() {
@@ -180,5 +191,4 @@ export class LoginComponent {
       clearInterval(this.timerInterval);
     }
   }
-
 }

@@ -8,17 +8,20 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterjeunediplomeComponent } from './registerjeunediplome/registerjeunediplome.component';
 import { RegisterresponsableentrepriseComponent } from './registerresponsableentreprise/registerresponsableentreprise.component';
+import { LoginJeuneDiplomeComponent } from './login-jeune-diplome/login-jeune-diplome.component';
+import { LoginResponsableEnterpriseComponent } from './login-responsable-enterprise/login-responsable-enterprise.component';
 
 const routes: Routes = [
 
  { path: 'home', component: HomeComponent },
  {path : 'about',component :AboutComponent},
  {path: 'contact',component :ContactComponent},
- {path :'', component:LoginComponent},
+ {path :'login', component:LoginComponent},
  {path:'register',component:RegisterComponent},
  {path :'registerjeunediplome',component:RegisterjeunediplomeComponent},
- {path :'registerresponsableentreprise',component:RegisterresponsableentrepriseComponent}
-
+ {path :'registerresponsableentreprise',component:RegisterresponsableentrepriseComponent},
+{path : 'loginjeunediplome', component:LoginJeuneDiplomeComponent},
+{path : 'loginresponsableentreprise', component:LoginResponsableEnterpriseComponent}
 
 ];
 

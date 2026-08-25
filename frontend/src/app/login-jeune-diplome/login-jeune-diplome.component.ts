@@ -2,18 +2,16 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { Candidat } from '../Entity/Candidat.Entity';
+import { JeuneDiplome } from '../Entity/JeuneDiplome.Entity';
 import { CrudService } from '../service/crud.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-jeune-diplome',
+  templateUrl: './login-jeune-diplome.component.html',
+  styleUrls: ['./login-jeune-diplome.component.css']
 })
-export class LoginComponent {
-
-  
-   loginForm: FormGroup;
+export class LoginJeuneDiplomeComponent {
+loginForm: FormGroup;
   loginAttempts = 0;
   isLocked = false;
   timeLeft = 25;
@@ -119,15 +117,27 @@ export class LoginComponent {
     }
 
     let data = this.loginForm.value;
-    let candidat = new Candidat(null, null, null, data.email, data.mdp, null, null);
+    let jeuneDiplome = new JeuneDiplome(
+      null, 
+      null, 
+      null, 
+      data.email, 
+      data.mdp, 
+      null, 
+      null, 
+      null, 
+      null, 
+      null, 
+      null
+    );
 
-    this.service.loginCandidat(candidat).subscribe({
+    this.service.loginJeuneDiplome(jeuneDiplome).subscribe({
       next: (res) => {
         console.log('✅ Réponse du serveur:', res);
 
         if (res && res.token) {
           localStorage.setItem("myToken", res.token);
-          localStorage.setItem("role", "Candidat");
+          localStorage.setItem("role", "JeuneDiplome");
           localStorage.setItem("email", res.email || data.email);
           localStorage.setItem("nom", res.nom || '');
           localStorage.setItem("prenom", res.prenom || '');
@@ -172,7 +182,7 @@ export class LoginComponent {
   }
 
   goToRegister() {
-    this.router.navigate(['register-candidat']);
+    this.router.navigate(['register-jeune-diplome']);
   }
 
   ngOnDestroy() {
@@ -180,5 +190,4 @@ export class LoginComponent {
       clearInterval(this.timerInterval);
     }
   }
-
 }

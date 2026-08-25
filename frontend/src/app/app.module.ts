@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterjeunediplomeComponent } from './registerjeunediplome/registerjeunediplome.component';
 import { RegisterresponsableentrepriseComponent } from './registerresponsableentreprise/registerresponsableentreprise.component';
+import { LoginJeuneDiplomeComponent } from './login-jeune-diplome/login-jeune-diplome.component';
+import { LoginResponsableEnterpriseComponent } from './login-responsable-enterprise/login-responsable-enterprise.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { RegisterresponsableentrepriseComponent } from './registerresponsableent
     LoginComponent,
     ContactComponent,
     RegisterjeunediplomeComponent,
-    RegisterresponsableentrepriseComponent
+    RegisterresponsableentrepriseComponent,
+    LoginJeuneDiplomeComponent,
+    LoginResponsableEnterpriseComponent
   ],
   imports: [
     BrowserModule,

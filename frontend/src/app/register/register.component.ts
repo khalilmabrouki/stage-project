@@ -158,7 +158,7 @@ registerForm: FormGroup;
           timer: 3000,
           showConfirmButton: true
         }).then(() => {
-          this.router.navigate(['login']);
+          this.router.navigate(['/home']);
         });
       },
       error: (err) => {
@@ -191,6 +191,6 @@ registerForm: FormGroup;
 
   // Rediriger vers la page de connexion
   goToLogin() {
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 }
