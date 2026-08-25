@@ -8,4 +8,5 @@ public interface ResponsableEntrepriseRepository extends JpaRepository<Responsab
 
     boolean existsByEmail(String email);
 
+    ResponsableEntreprise findResponsableEntrepriseByEmail(String email);
 }
