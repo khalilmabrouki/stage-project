@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListcandidatComponent } from './listcandidat/listcandidat.component';
 import { ListofferComponent } from './listoffer/listoffer.component';
 import { ListcontactComponent } from './listcontact/listcontact.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,10 @@ import { ListcontactComponent } from './listcontact/listcontact.component';
     LoginComponent,
     ListcandidatComponent,
     ListofferComponent,
-    ListcontactComponent
+    ListcontactComponent,
+    HeaderComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
