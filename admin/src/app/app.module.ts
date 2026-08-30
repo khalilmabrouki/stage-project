@@ -14,6 +14,9 @@ import { ListcontactComponent } from './listcontact/listcontact.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { ModfieradminComponent } from './modfieradmin/modfieradmin.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,10 @@ import { FooterComponent } from './footer/footer.component';
     ListcontactComponent,
     HeaderComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    ModfieradminComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import { RegisterjeunediplomeComponent } from './registerjeunediplome/registerje
 import { RegisterresponsableentrepriseComponent } from './registerresponsableentreprise/registerresponsableentreprise.component';
 import { LoginJeuneDiplomeComponent } from './login-jeune-diplome/login-jeune-diplome.component';
 import { LoginResponsableEnterpriseComponent } from './login-responsable-enterprise/login-responsable-enterprise.component';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { LoginResponsableEnterpriseComponent } from './login-responsable-enterpr
     RegisterjeunediplomeComponent,
     RegisterresponsableentrepriseComponent,
     LoginJeuneDiplomeComponent,
-    LoginResponsableEnterpriseComponent
+    LoginResponsableEnterpriseComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

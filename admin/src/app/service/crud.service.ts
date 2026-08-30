@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Candidat } from '../Entity/Candidat.Entity';
 import { Offer } from '../Entity/Offer.Entity';
 import { Contact } from '../Entity/Contact.Entity';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import { Contact } from '../Entity/Contact.Entity';
 
 export class CrudService {
 
-  
+  helper= new JwtHelperService();
   apiUrl='http://localhost:8080/api';
  loginurl='http://localhost:8080/api/admin/login';
 
@@ -34,24 +35,51 @@ addadmin(admin:Admin){
   }
 
 
-
-  getAdmin(): Observable<Admin[] | { admins: Admin[] } | { data: Admin[] }>{
-    return this.http.get<Admin[] | { admins: Admin[] } | { data: Admin[] }>(this.apiUrl +"/admin");
-  }
+getAdmin(): Observable<any> {  // Utiliser any au lieu du type complexe
+  return this.http.get<any>(`${this.apiUrl}/admin`);
+}
   onDeleteAdmin(id : number){
     const url =`${this.apiUrl+"/admin"}/${id}` //lire id dans entity admin 
     return this.http.delete(url )
   }
 
 
+isLoggedIn(){
+
+    let token = localStorage.getItem("myToken");
+
+    if (token) {
+      return true ;
+    } else {
+      return false;
+    }
+  }
+
+  userDetails(){
+    let token:any=localStorage.getItem('myToken'); 
+    let decodeToken= this.helper.decodeToken(token); 
+     return decodeToken.data; 
+   }
+
+
+   updateAdmin(id:number,admin: Admin) {
+    const url = `${this.apiUrl+"/admin"}/${id}`;
+    return this.http.put<any>(url,admin);
+  }
+
+
+   findAdminById(id : number): Observable<Admin> {
+    const url = `${this.apiUrl + "/admin"}/${id}`;
+    return this.http.get<Admin>(url)
+  }
 
   /* َCandidat CRUD operations */
 
+getCandidat(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/candidat`);
+}
 
 
-    getCandidat(): Observable<Candidat[]> {
-    return this.http.get<Candidat[]>(this.apiUrl + "/candidat");
-  }
 
   onDeleteCandidat(id: number): Observable<any> {
     const url = `${this.apiUrl}/candidat/${id}`;
@@ -62,10 +90,9 @@ addadmin(admin:Admin){
 
   /* َOffer CRUD operations */
 
-
-    getOffer(): Observable<Offer[]> {
-    return this.http.get<Offer[]>(this.apiUrl + "/offer");
-  }
+getOffer(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/offer`);
+}
 
   onDeleteOffer(id: number): Observable<any> {
     const url = `${this.apiUrl}/offer/${id}`;

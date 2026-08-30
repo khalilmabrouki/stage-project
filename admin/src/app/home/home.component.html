@@ -1,12 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-sidebar-size="expanded" dir="ltr">
 
+
+<!-- Mirrored from tarento-html.netlify.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Aug 2026 17:40:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Job Portal Dashboard - Tarento Bootstrap Admin & Dashboard Template</title>
+  <meta name="description"
+    content="Tarento is a fully responsive and premium Bootstrap 5 Admin & Dashboard Template built with HTML, CSS, and JS.">
+  <meta name="keywords" content="admin, dashboard, bootstrap 5, template, responsive, web app, ui kit">
+  <meta name="author" content="Paitheme">
+
+</head>
+
+<body>
   <div class="main-wrapper">
 
-    
     <!-- Sidebar -->
- <app-menu>   </app-menu>
-     <div class="content-wrapper">
+    <!-- Sidebar -->
+   <app-menu> </app-menu>
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+
       <!-- Header -->
-    <app-header>  </app-header>
+      <!-- Header -->
+     <app-header>  </app-header>
       
       <!-- World Clock Modal -->
       <div class="modal fade" id="worldClockModal" tabindex="-1" aria-labelledby="worldClockModalLabel" aria-hidden="true">
@@ -66,8 +87,7 @@
                           <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-github" value="github">
                           <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
                               for="theme-preset-github">
-                              <i data-lucide="user" class="fs-20"></i>
-<i data-lucide="users" class="fs-20"></i>
+                              <i data-lucide="github" class="fs-20"></i>
                               <span>GitHub</span>
                           </label>
                       </div>
@@ -320,7 +340,9 @@
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" title="Settings">
           <i data-lucide="settings" class="fs-22 animate-spin text-white"></i>
-      </button>      <!-- Horizontal Menu -->
+      </button>
+      <!-- Horizontal Menu (Visible only in horizontal layout) -->
+      <!-- Horizontal Menu -->
       <div class="horizontal-menu bg-white border-bottom shadow-sm d-none d-lg-block">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg navbar-light p-0">
@@ -688,83 +710,113 @@
             </div>
           </nav>
         </div>
-      </div>  
-      
+      </div>
       <main class="page-content">
+        <!-- Row 1: Top Statistics Cards -->
+        <div class="row g-4 mb-4">
 
-        <div class="row g-4">
-          <div class="col-12">
-            <div class="card">
-             <div class="card-header position-relative overflow-hidden">
-    <!-- Background icon -->
-    <i data-lucide="users" class="position-absolute" 
-       style="right: 20px; top: 50%; transform: translateY(-50%); width: 80px; height: 80px; color: rgba(102, 126, 234, 0.05); z-index: 0; pointer-events: none;"></i>
-    
-    <div class="position-relative" style="z-index: 1;">
-        <h4 class="mb-0">
-            <i data-lucide="users" class="me-2" style="width: 18px; height: 18px; color: #667eea; display: inline-block;"></i>
-            Liste des Administrateurs
-           
-        </h4>
-    </div>
-</div>
-             <div class="card-body">
-    <!-- Debug: Shows 2 admins found -->
-    <div class="alert alert-success">
-        ✅ ListAdmin Component is LOADED! 
-        Data length: {{ listeAdmin?.length || 0 }}
-    </div>
-
-    <div class="table-responsive" *ngIf="listeAdmin && listeAdmin.length > 0">
-        <table class="table table-hover align-middle mb-0 data-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>NOM</th>
-                    <th>PRENOM</th>
-                    <th>EMAIL</th>
-                    <th>ROLE</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let admin of listeAdmin">
-                    <td>{{ admin.id }}</td>
-                    <td>{{ admin.nom }}</td>
-                    <td>{{ admin.prenom }}</td>
-                    <td>{{ admin.email }}</td>
-                       <td>
-    <span class="badge" 
-          [class.bg-primary]="admin.role === 'Super Admin'" 
-          [class.bg-info]="admin.role === 'Admin'"
-          style="color: #000 !important;">
-        {{ admin.role }}
-    </span>
-</td>
-                      <td>
-    <a href="/modfieradmin/{{admin.id}}" type="button" class="btn btn-success">Modfier</a>
-<button (click)="DeleteAdmin(admin)" type="button" class="btn btn-danger">Supprime</button>
-</td>
-                      
-                    
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Show empty state if no data -->
-    <div *ngIf="listeAdmin && listeAdmin.length === 0" class="text-center py-4">
-        <i data-lucide="users" class="text-muted" style="width: 48px; height: 48px; opacity: 0.3;"></i>
-        <p class="mt-2 text-muted">Aucun administrateur trouvé</p>
-    </div>
-</div>
-            </div>
+  <!-- Carte: Administrateurs -->
+  <div class="col-sm-6 col-xl-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h6 class="text-secondary mb-0 fw-medium">Administrateurs</h6>
+          <div class="avatar avatar-md bg-primary-subtle">
+            <i data-lucide="shield-check"></i>
           </div>
         </div>
-      </main>
-      <!-- Footer -->
- <app-footer>   </app-footer>
-
- 
+        <div class="d-flex align-items-end justify-content-between">
+          <div>
+            <h3 class="fw-bold mb-1 text-dark"><span class="counter-value">{{ totalAdmin }}</span></h3>
+            <p class="text-success mb-0 fw-medium fs-14">
+              <i data-lucide="trending-up" class="fs-14"></i> +10.2% vs le mois dernier
+            </p>
+          </div>
+          <div id="sparkline-jobs" class="mt-2"></div>
+        </div>
+      </div>
     </div>
   </div>
+
+          <!-- Card 2: Candidats -->
+      <div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h6 class="text-secondary mb-0 fw-medium">Candidats</h6>
+        <div class="avatar avatar-md bg-success-subtle">
+          <i data-lucide="users"></i>
+        </div>
+      </div>
+      <div class="d-flex align-items-end justify-content-between">
+        <div>
+          <h3 class="fw-bold mb-1 text-dark"><span class="counter-value">{{ totalCandidat }}</span></h3>
+          <p class="text-success mb-0 fw-medium fs-14">
+            <i data-lucide="trending-up" class="fs-14"></i> +15.4% vs le mois dernier
+          </p>
+        </div>
+        <div id="sparkline-applications" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Card 3: Offres-->
+         <div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h6 class="text-secondary mb-0 fw-medium">Offres</h6>
+        <div class="avatar avatar-md bg-warning-subtle">
+          <i data-lucide="briefcase"></i>
+        </div>
+      </div>
+      <div class="d-flex align-items-end justify-content-between">
+        <div>
+          <h3 class="fw-bold mb-1 text-dark"><span class="counter-value">{{ totalOffer }}</span></h3>
+          <p class="text-success mb-0 fw-medium fs-14">
+            <i data-lucide="trending-up" class="fs-14"></i> +8.2% vs le mois dernier
+          </p>
+        </div>
+        <div id="sparkline-interviews" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+       
+
+
+  <!-- Card 4: stast -->
+          <div class="chart-card">
+        <div class="chart-card-header">
+          <h5 class="chart-title">Répartition globale</h5>
+          <span class="chart-subtitle">Pourcentage par rôle</span>
+        </div>
+        <div class="chart-body">
+          <canvas id="percentageCanvas" width="350" height="350"></canvas>
+        </div>
+      </div>
+        </div>
+
+        <!-- Row 2: Analytics Charts -->
+       
+        <!-- Row 3: Tables & Lists -->
+     
+        <!-- Row 4: User Dashboard Widgets -->
+       
+
+        <!-- Row 5: Recommended Jobs Swiper -->
+      
+      </main>
+
+      <!-- Footer -->
+      <!-- Footer -->
+      <app-footer ></app-footer>
+    </div>
+  </div>
+
+</body>
+
+
+<!-- Mirrored from tarento-html.netlify.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Aug 2026 17:42:38 GMT -->
+</html>

@@ -6,17 +6,20 @@ import { LoginComponent } from './login/login.component';
 import { ListcandidatComponent } from './listcandidat/listcandidat.component';
 import { ListofferComponent } from './listoffer/listoffer.component';
 import { ListcontactComponent } from './listcontact/listcontact.component';
+import { AuthGuard } from './service/AuthGuard.service';
+import { HomeComponent } from './home/home.component';
+import { ModfieradminComponent } from './modfieradmin/modfieradmin.component';
 
 const routes: Routes = [
 
-{path : 'ajouteradmin' , component :AjouteradminComponent},
-{path : 'listadmin' , component : ListadminComponent},
+{path : 'ajouteradmin' , component :AjouteradminComponent, canActivate: [AuthGuard]},
+{path : 'listadmin' , component : ListadminComponent,canActivate: [AuthGuard]},
 {path : '' , component : LoginComponent},
-{path : 'listcandidat', component:ListcandidatComponent},
-{path : 'listoffer', component:ListofferComponent},
-{path : 'listcontact', component:ListcontactComponent},
-
-
+{path : 'listcandidat', component:ListcandidatComponent, canActivate: [AuthGuard]},
+{path : 'listoffer', component:ListofferComponent,canActivate: [AuthGuard]},
+{path : 'listcontact', component:ListcontactComponent,canActivate: [AuthGuard]}, 
+{path : 'home', component:HomeComponent,canActivate: [AuthGuard]},
+{path : 'modfieradmin/:id', component:ModfieradminComponent,canActivate: [AuthGuard]}
 
 ];
 

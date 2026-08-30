@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-sidebar-size="expanded" dir="ltr">
+
+
+<!-- Mirrored from tarento-html.netlify.app/forms by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Aug 2026 17:43:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Basic Forms  - Tarento Bootstrap Admin & Dashboard Template</title>
+  <meta name="description"
+    content="Tarento is a fully responsive and premium Bootstrap 5 Admin & Dashboard Template built with HTML, CSS, and JS.">
+  <meta name="keywords" content="admin, dashboard, bootstrap 5, template, responsive, web app, ui kit">
+  <meta name="author" content="Paitheme">
+
+</head>
+<body>
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+   <app-menu>  </app-menu>
+
+      <div class="content-wrapper">
+      <!-- Header -->
+     <app-header> </app-header>
+      
+      <!-- World Clock Modal -->
+      <div class="modal fade" id="worldClockModal" tabindex="-1" aria-labelledby="worldClockModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-primary bg-opacity-10 border-bottom-0 pb-3 pt-4 px-4">
+              <h5 class="modal-title d-flex align-items-center gap-2 fw-bold text-primary" id="worldClockModalLabel">
+                <i data-lucide="globe" class="fs-22"></i> World Clock
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4 bg-body">
+              <div class="d-flex flex-column gap-3" id="world-clock-list">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Offcanvas Right -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Theme Customization</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <div class="mb-4">
+                  <h6 class="mb-3">Theme Presets</h6>
+                  <div class="row g-2">
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-default" value="default"
+                              checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-default">
+                              <i data-lucide="layers" class="fs-20"></i>
+                              <span>Default</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-minimal" value="minimal">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-minimal">
+                              <i data-lucide="minus-square" class="fs-20"></i>
+                              <span>Minimal</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-forest" value="forest">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-forest">
+                              <i data-lucide="tree-pine" class="fs-20"></i>
+                              <span>Forest</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-github" value="github">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-github">
+                              <i data-lucide="github" class="fs-20"></i>
+                              <span>GitHub</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-corporate"
+                              value="corporate">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-corporate">
+                              <i data-lucide="briefcase" class="fs-20"></i>
+                              <span>Corporate</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-material"
+                              value="material">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-material">
+                              <i data-lucide="box" class="fs-20"></i>
+                              <span>Material</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-notion" value="notion">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-notion">
+                              <i data-lucide="book" class="fs-20"></i>
+                              <span>Notion</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-royal" value="royal">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-royal">
+                              <i data-lucide="crown" class="fs-20"></i>
+                              <span>Royal</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-glassmorphism"
+                              value="glassmorphism">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-glassmorphism">
+                              <i data-lucide="droplets" class="fs-20"></i>
+                              <span>Glass</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-luxury" value="luxury">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-luxury">
+                              <i data-lucide="gem" class="fs-20"></i>
+                              <span>Luxury</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-candy" value="candy">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-candy">
+                              <i data-lucide="lollipop" class="fs-20"></i>
+                              <span>Candy</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="theme-preset" id="theme-preset-coming-soon"
+                              value="coming-soon">
+                          <label
+                              class="btn btn-outline-primary disabled d-flex align-items-center justify-content-center gap-2"
+                              for="theme-preset-coming-soon">
+                              <i data-lucide="loader-2" class="fs-20"></i>
+                              <span>Coming soon</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="mb-4">
+                  <h6 class="mb-3">Color Scheme</h6>
+                  <div class="row g-2">
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="theme-mode" id="theme-mode-light" value="light" checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-mode-light">
+                              <i data-lucide="sun" class="fs-25"></i>
+                              <span>Light</span>
+                          </label>
+                      </div>
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="theme-mode" id="theme-mode-dark" value="dark">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="theme-mode-dark">
+                              <i data-lucide="moon" class="fs-25"></i>
+                              <span>Dark</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="mb-4">
+                  <h6 class="mb-3">Layouts</h6>
+                  <div class="row g-2">
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="layout-mode" id="layout-mode-vertical" value="vertical" checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="layout-mode-vertical">
+                              <i data-lucide="layout-dashboard" class="fs-20"></i>
+                              <span>Vertical</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="layout-mode" id="layout-mode-horizontal" value="horizontal">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="layout-mode-horizontal">
+                              <i data-lucide="layout" class="fs-20"></i>
+                              <span>Horizontal</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="mb-4">
+                  <h6 class="mb-3">Sidebar Size</h6>
+                  <div class="row g-2">
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="sidebar-size" id="sidebar-size-expanded"
+                              value="expanded" checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="sidebar-size-expanded">
+                              <i data-lucide="panel-left-open" class="fs-20"></i>
+                              <span>Expanded</span>
+                          </label>
+                      </div>
+                      <div class="col-6">
+                          <input class="btn-check" type="radio" name="sidebar-size" id="sidebar-size-collapsed"
+                              value="collapsed">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="sidebar-size-collapsed">
+                              <i data-lucide="panel-left-close" class="fs-20"></i>
+                              <span>Hover Expanded</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="mb-4">
+                  <h6 class="mb-3">Smart Theme</h6>
+                  <div class="row g-2">
+                      <div class="col-4">
+                          <input class="btn-check" type="radio" name="smart-theme" id="smart-theme-default" value="default"
+                              checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2 px-2"
+                              for="smart-theme-default">
+                              <i data-lucide="user" class="fs-25"></i>
+                              <span>Default</span>
+                          </label>
+                      </div>
+                      <div class="col-4">
+                          <input class="btn-check" type="radio" name="smart-theme" id="smart-theme-time" value="time">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2 px-2"
+                              for="smart-theme-time">
+                              <i data-lucide="clock" class="fs-25"></i>
+                              <span>Time Based</span>
+                          </label>
+                      </div>
+                      <div class="col-4">
+                          <input class="btn-check" type="radio" name="smart-theme" id="smart-theme-battery" value="battery">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2 px-2"
+                              for="smart-theme-battery">
+                              <i data-lucide="battery-medium" class="fs-25"></i>
+                              <span>Battery Saver</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="mb-4">
+                  <h6 class="mb-3">Direction</h6>
+                  <div class="row g-2">
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="dir-mode" id="dir-mode-ltr" value="ltr" checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="dir-mode-ltr">
+                              <i data-lucide="align-left" class="fs-25"></i>
+                              <span>LTR</span>
+                          </label>
+                      </div>
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="dir-mode" id="dir-mode-rtl" value="rtl">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="dir-mode-rtl">
+                              <i data-lucide="align-right" class="fs-25"></i>
+                              <span>RTL</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="mb-4">
+                  <h6 class="mb-3">Header Theme</h6>
+                  <div class="row g-2">
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="header-theme" id="header-theme-default" value="default"
+                              checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="header-theme-default">
+                              <i data-lucide="layers" class="fs-25"></i>
+                              <span>Light</span>
+                          </label>
+                      </div>
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="header-theme" id="header-theme-brand" value="brand">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="header-theme-brand">
+                              <i data-lucide="bookmark" class="fs-25"></i>
+                              <span>Brand</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="mb-4">
+                  <h6 class="mb-3">Sidebar Theme</h6>
+                  <div class="row g-2">
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="sidebar-theme" id="sidebar-theme-default"
+                              value="default" checked>
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="sidebar-theme-default">
+                              <i data-lucide="layers" class="fs-25"></i>
+                              <span>Light</span>
+                          </label>
+                      </div>
+                      <div class="col-3">
+                          <input class="btn-check" type="radio" name="sidebar-theme" id="sidebar-theme-brand" value="brand">
+                          <label class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                              for="sidebar-theme-brand">
+                              <i data-lucide="bookmark" class="fs-25"></i>
+                              <span>Brand</span>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+      
+      
+          </div>
+      </div>
+      
+      <!-- Floating Settings Button -->
+      <button
+          class="btn btn-primary btn-icon rounded-circle shadow-lg position-fixed z-3 d-flex align-items-center justify-content-center customizer-toggle"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" title="Settings">
+          <i data-lucide="settings" class="fs-22 animate-spin text-white"></i>
+      </button>      
+      <!-- Horizontal Menu -->
+   
+
+    <main class="page-content">
+
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="card h-100">
+             <div class="card-header position-relative overflow-hidden">
+    <!-- Background admin icon -->
+    <i data-lucide="user-cog" class="position-absolute" 
+       style="right: 20px; top: 50%; transform: translateY(-50%); width: 120px; height: 120px; color: rgba(102, 126, 234, 0.05); z-index: 0; pointer-events: none;"></i>
+    
+    <div class="position-relative" style="z-index: 1;">
+        <h3 class="header-title">
+            <i data-lucide="user-plus" class="me-2" style="width: 28px; height: 28px; color: #667eea; display: inline-block;"></i>
+            Ajouter un Administrateur
+        </h3>
+        <p class="header-subtitle mb-0">Créez un nouveau compte administrateur</p>
+    </div>
+</div>
+              <div class="card-body">
+                <form (ngSubmit)="updateAdmin()" [formGroup]="adminForm" >
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nom</label>
+                    <input formControlName="nom" type="text" class="form-control" id="exampleInputEmail1" placeholder="Entrez votre nom" aria-describedby="emailHelp">
+
+                   
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Prenom</label>
+                    <input formControlName="prenom" type="text" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre prenom">
+                  </div>
+                  <!--email-->
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Email</label>
+                    <input formControlName="email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre email" >
+                  </div>
+                  <!--mot de passe-->
+                   <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                    <input formControlName="mdp" type="password" class="form-control" id="exampleInputPassword1" placeholder="Créez un mot de passe sécurisé" >
+                  </div>
+                   <!-- role -->
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label" >Role</label>
+
+                    <select id="" value="" class="form-control" formControlName="role" >  
+                        <option value="superAdmin"  > Super Administrateur </option>
+                        <option value="sousAdmin"   >  Sous Administrateur </option>
+                    
+                    </select>
+                    
+                  </div>
+                  <hr>
+
+           <div class="d-flex gap-2">
+    <button type="submit" class="btn btn-primary btn-lg px-5" routerLink="/ajouter-admin">
+        <i data-lucide="user-plus" class="me-2" style="width: 20px; height: 20px; display: inline-block;"></i>
+        Modfier
+    </button>
+    <button type="reset" class="btn btn-outline-secondary btn-lg px-5">
+        <i data-lucide="x" class="me-2" style="width: 20px; height: 20px; display: inline-block;"></i>
+     Annuler
+    </button>
+</div>              
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Input Groups -->
+        
+
+
+          <!-- Floating Labels -->
+        
+
+          <!-- Form Sizing & File Inputs -->
+        
+
+         
+        </div>
+
+      </main>
+      <!-- Footer -->
+   <app-footer>  </app-footer>
+    </div>
+  </div>
+
+</body>
+
+
+<!-- Mirrored from tarento-html.netlify.app/forms by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Aug 2026 17:43:22 GMT -->
+</html>

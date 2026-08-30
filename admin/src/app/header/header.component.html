@@ -104,19 +104,24 @@
               </div>
             </div>
           </div>
-          <div class="dropdown dropup">
-            <button class="btn btn-light rounded-circle p-0 avatar avatar-md" data-bs-toggle="dropdown">
-              <img src="assets/images/user-8.jpg" alt="User" class="rounded-circle w-100 h-100">
-            </button>
-            <ul class="dropdown-menu w-100 shadow-lg border mb-2 pb-0 pt-2 rounded-3">
-              <li><a class='dropdown-item' href='profile.html'><i data-lucide="user" class="me-2 fs-16"></i> Profile</a></li>
-              <li><a class="dropdown-item" href="#"><i data-lucide="settings" class="me-2 fs-16"></i> Settings</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item text-danger" href="#"><i data-lucide="log-out" class="me-2 fs-16"></i> Logout</a>
-              </li>
-            </ul>
-          </div>
+          <!-- End Notification Dropdown -->
+<div class="dropdown dropup">
+  <button class="btn btn-light rounded-circle p-0 avatar avatar-md d-flex align-items-center justify-content-center" data-bs-toggle="dropdown">
+    <img src="assets/images/user-8.jpg" alt="User" class="rounded-circle w-100 h-100">
+  </button>
+  <ul class="dropdown-menu w-100 shadow-lg border mb-2 pb-0 pt-2 rounded-3">
+    <!-- ✅ Afficher le nom et prénom de l'utilisateur connecté -->
+    <li class="px-3 py-2 border-bottom">
+      <div class="d-flex flex-column">
+        <span class="fw-bold text-dark">{{ userDetails.nom }} {{ userDetails.prenom }}</span>
+      
+      </div>
+    </li>
+    <li><a class='dropdown-item' href='profile.html'><i data-lucide="user" class="me-2 fs-16"></i> Profil</a></li>
+    <li><a class="dropdown-item" href="#"><i data-lucide="settings" class="me-2 fs-16"></i> Paramètres</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item text-danger" (click)="logout()"><i data-lucide="log-out" class="me-2 fs-16"></i> Déconnexion</a></li>
+  </ul>
+</div>
         </div>
       </header>
