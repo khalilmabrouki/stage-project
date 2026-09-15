@@ -1,9 +1,6 @@
 package com.projet.stage.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -19,7 +16,12 @@ public class Offer {
     private String experience;
     private String salaire ;
     private String adresse;
-    private String nomsociete;
     private String datedebut;
     private String datefin;
+    private String type;
+    private String competence;
+    @ManyToOne
+    private ResponsableEntreprise responsableEntreprise;
+
+
 }

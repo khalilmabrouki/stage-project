@@ -9,6 +9,8 @@ import { ListcontactComponent } from './listcontact/listcontact.component';
 import { AuthGuard } from './service/AuthGuard.service';
 import { HomeComponent } from './home/home.component';
 import { ModfieradminComponent } from './modfieradmin/modfieradmin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ModfierprofileComponent } from './modfierprofile/modfierprofile.component';
 
 const routes: Routes = [
 
@@ -19,7 +21,11 @@ const routes: Routes = [
 {path : 'listoffer', component:ListofferComponent,canActivate: [AuthGuard]},
 {path : 'listcontact', component:ListcontactComponent,canActivate: [AuthGuard]}, 
 {path : 'home', component:HomeComponent,canActivate: [AuthGuard]},
-{path : 'modfieradmin/:id', component:ModfieradminComponent,canActivate: [AuthGuard]}
+{path : 'modfieradmin/:id', component:ModfieradminComponent,canActivate: [AuthGuard]},
+
+{path : 'modfierprofile/:id', component:ModfierprofileComponent,canActivate: [AuthGuard]},
+
+{path : 'profile', component : ProfileComponent,canActivate : [AuthGuard] }
 
 ];
 

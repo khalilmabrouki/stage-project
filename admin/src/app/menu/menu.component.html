@@ -1,6 +1,12 @@
  <aside class="sidebar">
+
+
+  
       <div class="sidebar-header d-flex align-items-center justify-content-between">
         <a class='d-flex align-items-center text-decoration-none' href='index-2.html'>
+
+
+
           <div class="logo-icon bg-primary text-white d-flex align-items-center justify-content-center rounded me-2">
             <i data-lucide="zap" class="fs-18"></i>
           </div>
@@ -175,15 +181,15 @@
             aria-expanded="false">
             <div
               class="avatar avatar-sm bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 position-relative">
-              <span class="fw-semibold fs-16">A</span>
+              <span class="fw-semibold fs-16">{{userDetails.nom[0]}}</span>
               <span
                 class="position-absolute top-100 start-100 translate-middle p-1 bg-success border border-white border-2 rounded-circle">
                 <span class="visually-hidden">Online</span>
               </span>
             </div>
             <div class="flex-grow-1 overflow-hidden pe-2">
-              <h6 class="mb-0 text-truncate fw-semibold text-body fs-14">Admin User</h6>
-              <small class="text-muted text-truncate d-block fs-12">admin@example.com</small>
+              <h6 class="mb-0 text-truncate fw-semibold text-body fs-14">{{ userDetails.nom }} {{ userDetails.prenom }}</h6>
+              <small class="text-muted text-truncate d-block fs-12">{{ userDetails.email }}</small>
             </div>
             <i data-lucide="chevron-up" class="text-muted fs-16 flex-shrink-0"></i>
           </a>

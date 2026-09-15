@@ -2,13 +2,14 @@ package com.projet.stage.Service;
 
 import com.projet.stage.Entity.Candidat;
 import com.projet.stage.Entity.Contact;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface CandidatService {
 
-    Candidat ajouterCandidat(Candidat candidat);
+    ResponseEntity<Object> ajouterCandidat(Candidat candidat);
 
     Candidat modifierCandidat(Candidat candidat);
 

@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface OfferService {
-    Offer ajouterOffer(Offer offer);
+    Offer ajouterOffer(Long entrepriseId,Offer offer);
+    List<Offer> getOfferByEntreprise(Long id);
 
     Offer modifierOffer(Offer offer);
 

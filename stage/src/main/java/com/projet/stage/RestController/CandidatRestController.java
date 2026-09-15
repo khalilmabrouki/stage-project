@@ -38,39 +38,11 @@ public class CandidatRestController {
     @RequestMapping(method = RequestMethod.POST)
     ResponseEntity<?> AjouterCandidat(@RequestBody Candidat candidat) {
 
-        HashMap<String, Object> response = new HashMap<>();
 
-        if (candidatRepository.existsByEmail(candidat.getEmail())) {
-            response.put("message", "Email existe déjà !");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
-        } else {
-            String rawPassword = candidat.getMdp();
-            candidat.setMdp(this.bCryptPasswordEncoder.encode(rawPassword));
 
-            Candidat savedUser = candidatRepository.save(candidat);
-
-            // Envoyer email
-            try {
-                SimpleMailMessage message = new SimpleMailMessage();
-                message.setTo(candidat.getEmail());
-                message.setSubject("Votre compte candidat a été créé");
-                message.setText(
-                        "Bonjour " + candidat.getPrenom() + ",\n\n" +
-                                "Votre compte candidat a été créé avec succès.\n\n" +
-                                "Email: " + candidat.getEmail() + "\n" +
-                                "Mot de passe: " + rawPassword + "\n\n" +
-                                "Veuillez vous connecter et changer votre mot de passe.\n\n" +
-                                "Merci."
-                );
-                mailSender.send(message);
-            } catch (Exception e) {
-                System.out.println("❌ Error sending email to: " + candidat.getEmail());
-                e.printStackTrace();
-            }
-
-            return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+            return candidatService.ajouterCandidat(candidat);
         }
-    }
+
 
     // ===== AFFICHER TOUS =====
     @RequestMapping(method = RequestMethod.GET)

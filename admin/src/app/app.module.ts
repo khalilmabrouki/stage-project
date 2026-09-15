@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ModfieradminComponent } from './modfieradmin/modfieradmin.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ModfierprofileComponent } from './modfierprofile/modfierprofile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     HomeComponent,
     ModfieradminComponent,
-    ProfileComponent
+    ProfileComponent,
+    ModfierprofileComponent
   ],
   imports: [
     BrowserModule,
