@@ -20,6 +20,5 @@ public interface CandidatService {
     Optional<Candidat> afficherCandidattById(Long id);
 
 
-
-
+    ResponseEntity<?> confirmationemail(String confirmationemail);
 }

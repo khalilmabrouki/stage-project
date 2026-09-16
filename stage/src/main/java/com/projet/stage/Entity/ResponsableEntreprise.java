@@ -13,12 +13,10 @@ import lombok.Data;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String nom;
-        private String prenom;
         private String email;
         private String mdp;
-        private String telephone;
-        private String nomEntreprise;
-        private String adresseEntreprise;
-        private String poste;
-        private String statut;
+        private String tel;
+        private String adresse;
+        private String logo;
+        private boolean etat;
     }

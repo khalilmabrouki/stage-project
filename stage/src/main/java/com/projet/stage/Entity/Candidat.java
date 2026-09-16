@@ -20,7 +20,9 @@ public class Candidat {
     private String email;
     private String mdp;
     private String telephone;
-    private String cv;
+    private String adresse;
+    private String specialite;
+    private boolean etat;
 
 
 }

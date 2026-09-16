@@ -105,4 +105,10 @@ public class CandidatRestController {
             }
         }
     }
+
+    @RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
+    public ResponseEntity<?> confirmCandidatAccount(@RequestParam("token")String confirmationemail) {
+        return candidatService.confirmationemail(confirmationemail);
+    }
+
 }
